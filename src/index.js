@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import pick from './pick'
-import mapValueToProps from './mapValueToProps'
+import pick from './pick';
+import mapValueToProps from './mapValueToProps';
 
-export default (ComposedComponent, {initialState = {}, propsToState = [], changeEvent = false}) => {
+export default (ComposedComponent, { initialState = {}, propsToState = [], changeEvent = false }) => {
   class StateManagedComponent extends Component {
     constructor(props) {
       super(props);

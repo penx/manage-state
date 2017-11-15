@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "Higher order component to wrap components that expect to have their state managed by their parent by lifting state up.",
   "main": "lib/index.js",
-  "module": "src/index.js",
   "scripts": {
     "prepare": "babel --source-maps -d lib/ src/"
   },
@@ -19,7 +18,12 @@
   "directories": {
     "lib": "lib"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react": ">=15"
+  },
+  "peerDependencies": {
+    "react": ">=15"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/penx/manage-state.git"
