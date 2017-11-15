@@ -1,13 +1,13 @@
 {
   "name": "manage-state",
   "version": "0.0.1",
-  "description": "",
+  "description": "Higher order component to wrap components that expect to have their state managed by their parent by lifting state up.",
   "main": "lib/index.js",
   "module": "src/index.js",
   "scripts": {
     "prepare": "babel --source-maps -d lib/ src/"
   },
-  "author": "",
+  "author": "Alasdair McLeay",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -15,5 +15,22 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/penx/manage-state.git"
+  },
+  "keywords": [
+    "controlled components"
+    "redux-form",
+    "storybook",
+  ],
+  "bugs": {
+    "url": "https://github.com/penx/manage-state/issues"
+  },
+  "homepage": "https://github.com/penx/manage-state#readme"
 }
