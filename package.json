@@ -25,9 +25,9 @@
     "url": "git+https://github.com/penx/manage-state.git"
   },
   "keywords": [
-    "controlled components"
+    "controlled components",
     "redux-form",
-    "storybook",
+    "storybook"
   ],
   "bugs": {
     "url": "https://github.com/penx/manage-state/issues"
