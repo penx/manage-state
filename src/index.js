@@ -7,7 +7,8 @@ export default (ComposedComponent, {
   initialState = {},
   propsToState = [],
   changeEvent = false,
-  singleValue = false }) => {
+  singleValue = false,
+  changeCallback = 'onChange'}) => {
   class StateManagedComponent extends Component {
     constructor(props) {
       super(props);
@@ -23,8 +24,13 @@ export default (ComposedComponent, {
         this.setState(() => pick(change, propsToState));
       }
     }
+
     render() {
-      return (<ComposedComponent {...this.props} {...this.state} onChange={this.handleChange} />);
+      const callbacks = {
+        [changeCallback]: this.handleChange
+      }
+
+      return (<ComposedComponent {...this.props} {...this.state} {...callbacks} />);
     }
   }
   return StateManagedComponent;
