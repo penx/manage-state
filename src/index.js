@@ -3,6 +3,12 @@ import React, { Component } from 'react';
 import pick from './pick';
 import mapValueToProps from './mapValueToProps';
 
+
+const initialStateFromProps = (props) => {
+  const defaultFieldState = '';
+  return props.reduce((i, n) => ({...i, [n]: defaultFieldState}), {});
+}
+
 export default (ComposedComponent, {
   initialState = {},
   propsToState = [],
@@ -12,16 +18,23 @@ export default (ComposedComponent, {
   class StateManagedComponent extends Component {
     constructor(props) {
       super(props);
-      this.state = initialState;
+      this.state = {
+        ...initialStateFromProps(propsToState),
+        ...initialState
+      };
     }
 
     handleChange = (change) => {
+      this.setState(this.getNewState(change));
+    }
+
+    getNewState(change) {
       if (changeEvent) {
-        this.setState(mapValueToProps(propsToState, change.target.value));
+        return (mapValueToProps(propsToState, change.target.value));
       } else if (singleValue) {
-        this.setState(mapValueToProps(propsToState, change));
+        return (mapValueToProps(propsToState, change));
       } else {
-        this.setState(() => pick(change, propsToState));
+        return (pick(change, propsToState));
       }
     }
 
