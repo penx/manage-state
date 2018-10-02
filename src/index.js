@@ -8,7 +8,7 @@ export default (ComposedComponent, {
   propsToState = [],
   changeEvent = false,
   singleValue = false,
-  changeCallback = 'onChange'}) => {
+  changeCallback = 'onChange'} = {}) => {
   class StateManagedComponent extends Component {
     constructor(props) {
       super(props);
