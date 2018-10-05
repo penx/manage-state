@@ -1,6 +1,6 @@
 {
   "name": "manage-state",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Higher order component to wrap components that expect to have their state managed by their parent by lifting state up.",
   "main": "lib/index.js",
   "scripts": {
